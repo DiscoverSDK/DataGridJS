@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<fieldset>
+
+		<h3>Add Resources</h3>
+		<form data-bind="submit: $root.addResource">
+			<span >Description:</span>
+			<input type="text" style="width:180px;" data-bind="textInput: description"/>
+			<span > URL:</span>
+			<input type="text" style="width:340px;"  data-bind="textInput: url"/>
+			<button type="submit">Add</button><br/>
+		</form>	
+		<a href="#" data-bind="click: showResource">Show</a>
+
+
+
+
+		<h3>List of Resources</h3>
+		<table  border="1" style="width:740px;" >
+		    <thead>
+			    <tr>
+			        <th><h4>Description</h4></th>
+			        <th><h4>URL</h4></th>
+			        <th></th>
+			    </tr>
+		    </thead>
+
+		    <tbody data-bind="foreach: resources">
+			    <tr>
+			        <td><input type="text" data-bind="value: ResourceDescription"></td>
+		        	<td> <input type="text" data-bind="value: ResourceAddress"></td>
+		        	<td><button data-bind="click: $root.removeResource">Remove</button></td>
+			    </tr>
+		    </tbody>
+		</table>
+
+</fieldset>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+<script type="text/javascript" src="app_knock.js"></script>
+
+
+</body>
+</html>
