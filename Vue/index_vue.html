@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+
+</head>
+<body>
+<div id="app">
+    <fieldset>
+            <h3>Add Resources</h3>
+            
+            <span >Description:</span>
+            <input type="text" style="width:180px;" v-model="description" />
+            <span > URL:</span>
+            <input type="text" style="width:340px;" v-model="url" />
+            <a href="#" v-on:click="addResource">Add</a><br/>
+            
+        	<a href="#" v-on:click="showResource">Show</a>
+
+
+            <h3>List of Resources</h3>
+            <div>
+            <table  border="1" style="width:740px;">
+                <tbody>
+                <tr>
+                    <th><h4>Description</h4></th>
+                    <th><h4>URL</h4></th>
+                    <th></th>
+                </tr>
+                <tr v-for="resource in resources">
+                    <td><input type="text" v-model="resource.ResourceDescription"></td>
+                    <td><input type="text" v-model="resource.ResourceAddress"></td>
+                    <td><button v-on:click="removeResource($index)">Remove</button></td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+
+
+    </fieldset>
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+<script src="app_vue.js"></script>
+
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,34 @@
+<template>
+	<fieldset>
+	<h3>Add Resources</h3>
+
+	<form submit.trigger="addResource()">
+		<span >Description:</span>
+		<input type="text" value.bind="description" style="width:180px;" />
+		<span > URL:</span>
+		<input type="text" value.bind="url" style="width:340px;"  />
+		<button type="submit">Add</button>
+	</form>
+	<a href="#" click.trigger="showResource()">Show</a>
+
+
+	<h3>List of Resources</h3>
+	<table  border="1" style="width:740px;" >
+		<thead>
+			<tr>
+				<th><h4>Description</h4></th>
+				<th><h4>URL</h4></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr repeat.for="resource of resources">
+				<td>${resource.ResourceDescription}</td>
+				<td>${resource.ResourceAddress}</td>
+				<td><button click.trigger="removeResource(resource)">Remove</button></td>
+			</tr>
+		</tbody>
+	</table>
+
+	</fieldset>
+</template>

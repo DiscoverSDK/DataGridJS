@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang='en-GB'>
+<head>
+    <meta charset='utf-8'>
+    <title>Ractive test</title>
+</head>
+
+<body>
+<fieldset>
+    <div id='container'></div>
+</fieldset>
+<script id='resource' type='text/ractive'>
+    <h3>Add Resources</h3>
+	<form on-submit="addResource">
+		<span >Description:</span>
+		<input type="text" style="width:180px;" name="description" />
+		<span > URL:</span>
+		<input type="text" style="width:340px;" name="url"/>
+		<button type="submit">Add</button><br/>
+	</form>
+	<a href="#" on-click="showResource">Show</a>
+	<h3>List of Resources</h3>
+		<table  border="1" style="width:740px;" >
+		    <thead>
+			    <tr>
+			        <th><h4>Description</h4></th>
+			        <th><h4>URL</h4></th>
+			        <th></th>
+			    </tr>
+		    </thead>
+
+		    <tbody>
+		    	{{#each resourceList:num}}
+			    <tr>
+			        <td><input style="width:200px;" type="text" value="{{ResourceDescription}}" /></td>
+		        	<td><input style="width:443px;" type="text" value="{{ResourceAddress}}" /></td>
+		        	<td><button on-click="removeResource:{{num}}">Remove</button></td>
+			    </tr>
+			    {{/each}}
+		    </tbody>
+		</table>
+
+
+  </script>
+
+<script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
+<script type="text/javascript" src="app_rc.js"></script>
+</body>
+</html>

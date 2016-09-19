@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="gridstyle.css">
+
+</head>
+<div ng-app="myApp" ng-controller="ResourceController">
+    <fieldset >
+        <h3>Add Resources</h3>
+        <span >Description:</span>
+        <input type="text" ng-model="newres.ResourceDescription" style="width:200px;" />
+        <span > URL:</span>
+        <input type="text" ng-model="newres.ResourceAddress" style="width:340px;"  />
+        <a class="btn"  href="#" ng-click="AddResource(newres)">Add</a><br/>
+
+
+
+        <h3>List of Resources</h3>
+        <table   cellpadding="0" cellspacing="0">
+            <tbody>
+            <tr>
+                <th>Description</th>
+                <th>URL</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="res in resources">
+                <td><input style="width:200px;" type="text" ng-model="res.ResourceDescription" /></td>
+                <td><input style="width:440px;" type="text" ng-model="res.ResourceAddress" /></td>
+                <td><a class="btn"  ng-click="RemoveResource($index)">Remove</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <a class="btn" href="#" ng-click="ShowRes()">Show</a>
+
+
+
+    </fieldset>
+
+</div>
+
+
+
+
+
+</html>
+
+
+
